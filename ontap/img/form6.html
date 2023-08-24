@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="formdangky" onsubmit="return validate()">
+        <div>
+            <input type="text" name="txten" placeholder="nhap ten">
+            <p id="loiten" style="color: red;"></p>
+
+
+        </div>
+        <div>
+            <input type="password" name="txmk">
+            <p id="loimk" style="color: red;"></p>
+        </div>
+        <div>
+            <input type="password" name="txmkm1">
+            <p id="loimkm1" style="color: red;"></p>
+        </div>
+        <div>
+            <input type="password" name="txmkm2">
+            <p id="loimkm2" style="color: red;"></p>
+            
+        </div>
+        <p>
+
+        </p>
+        <div>
+            <button type="submit">gui</button>
+        </div>
+    </form>
+
+    <script>
+        function validate(){
+            var ten=document.formdangky.txten.value;
+            var ok=true;
+            var mk = document.formdangky.txmk.value;
+            var mkm1=document.formdangky.txmkm1.value;
+           var mkm2=document.formdangky.txmkm2.value;
+            var reg=/^[a-z0-9_-]{6,16}$/;
+
+
+            if(ten==""){
+                document.getElementById("loiten").innerHTML="nhap ten";
+                ok=false;
+            }else document.getElementById("loiten").innerHTML="";
+           
+           
+           
+            if(mk ==""){
+                document.getElementById("loimk").innerHTML="mhap mk";
+                ok=false;
+            }else if(!mk.match(reg)){
+                document.getElementById("loimk").innerHTML="it nhat 6 ky tu";
+                ok=false;
+            }else { document.getElementById("loimk").innerHTML="";
+        }
+           
+        
+        if(mkm1==""){
+                document.getElementById("loimkm1").innerHTML="nhap mk";
+                ok=false;
+           }else if(mkm1.length<6){
+                document.getElementById("loimkm1").innerHTML="mk yeu";
+                loimkm1.style.backgroundColor="yellow";
+                ok=false;
+
+            }else if(mkm1.length>=8){
+               document.getElementById("loimkm1").innerHTML="mk manh";
+               mkm1.style.backgroundColor="blue";
+                ok=true;
+           
+            }else document.getElementById("loimkm1").innerHTML="";
+       
+       
+            if(mkm2 == ""){
+            document.getElementById("loimkm2").innerHTML="nhap mk";
+           
+            ok=false;
+        }if (mkm1 !==mkm2){
+            document.getElementById("loimkm2").innerHTML="loi mk ";
+            ok=false;
+        }else document.getElementById("loimkm2").innerHTML="";
+        if(ok){
+            alert("dangky thanh cong");
+            return true;
+
+        }else return false;
+    }
+    </script>
+    
+</body>
+</html>

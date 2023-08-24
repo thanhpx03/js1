@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit="return validate()" name="formdangky">
+        <div class="a" >
+            <p>
+                <input type="text " name="txtten">
+            </p>
+            <p id="loiten"  style="color: red;">
+            </p>
+        </div>
+        <p>
+            <input type="password" name="mk">
+        </p>
+        <p id="loimk" style="color:red;"></p>
+        
+        <div>
+            <button type="submit">gui</button>
+        </div>
+   
+    <script>
+        function validate(){
+            var ten=document.formdangky.txtten.value;
+            var ok=true;
+            var mk=document.formdangky.mk.value;
+            var reg = /^[a-z0-9_-]{6,16}$/;
+            var mk1 ="5";
+            if(ten ==""){
+                document.getElementById("loiten").innerHTML="loi ten";
+                ok=false;
+
+            }else document.getElementById("loiten").innerHTML="";
+            
+            if(mk == ""){
+                document.getElementById("loimk").innerHTML="loi mk"
+                ok=false;
+            }else 
+            if(!mk.match(mk1)){
+                document.getElementById("loimk").innerHTML="k dung dinh dang"
+                ok=false;
+            }else
+            if(!mk.match(reg)){
+                document.getElementById("loimk").innerHTML="khong du";
+                ok=false;
+            }else document.getElementById("loimk").innerHTML="";
+            if(ok){
+                alert("dang ky thanh cong");
+                return true;
+            }else return false;
+        }
+    </script>
+    
+</body>
+</html>

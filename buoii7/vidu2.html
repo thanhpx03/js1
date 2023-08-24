@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>Tên SV</th>
+            <th>Điểm</th>
+        </tr>
+        <tr>
+            <td>Nguyễn Văn An</td>
+            <td class="diem">10</td>
+        </tr>
+        <tr>
+            <td>Nguyễn Mạnh Hưng</td>
+            <td class="diem">4</td>
+        </tr>
+        <tr>
+            <td>Nguyễn Thị Mai</td>
+            <td class="diem">5</td>
+        </tr>
+        <tr>
+            <td>Nguyễn Thị Nghọc</td>
+            <td class="diem">4</td>
+        </tr>
+    </table>
+    <!-- <p>
+        <button >Sinh viên có điểm >= 5</button>
+        </p> -->
+    <p>
+        <button>Sinh viên có điểm >= 5</button>
+    </p>
+
+    <script>
+        $("button").eq(0).click(function () {
+            $(".diem").each(function () {
+                if ($(this).html() >= 5) {
+                    $(this).parent().css("background-color", "yellow");
+
+                }
+
+            })
+
+        })
+
+    </script>
+    <!-- <script>
+            document.getElementsByTagName("button")[0].onclick=function(){
+                var diem=document.querySelectorAll(".diem");
+                for(var i=0;i<diem.length;i++){
+                    if(Number(diem[i].innerHTML>=5)){
+                        diem[i].parentNode.style.backgroundColor="yellow";
+                    }
+
+                }
+            }
+        </script> -->
+</body>
+
+</html>

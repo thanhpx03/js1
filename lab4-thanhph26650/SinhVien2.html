@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function SinhVien(id, ten, diemjs,diemphp) {
+            this.id = id;
+            this.ten = ten;
+            this.diemjs = diemjs;
+            this.diemphp=diemphp;
+            this.diemTB = function () {
+                return (this.diemjs+this.diemphp)/2;
+            }
+
+        }
+        var n = Number(prompt("số  lượng "));
+        var a = [];
+        for (var i = 0; i < n; i++) {   
+            var id = prompt("nhập mã sinh viên ");
+            var ten = prompt("nhập tên sinh vien ");
+            var diemjs =Number( prompt("nhập điểmjs "));
+            var diemphp=Number( prompt("nhập điểm php : "));
+             a[i] = new SinhVien(id, ten, diemjs,diemphp);
+        }
+        for (var i=0 ;i <n ;i++){
+        document.write("tên học sinh là " + a[i].id+"<br>");
+        document.write("diem học sinh là : " + a[i].ten+"<br>");
+        document.write("diemjs của sinh viên : " + a[i].diemjs + "<br>");
+        document.write("diemphp của sinh viên :  "+a[i].diemphp+"<br>");
+        document.write("điểm TB  : "+a[i].diemTB()+"<br>");
+        }
+    </script>
+</body>
+</html>

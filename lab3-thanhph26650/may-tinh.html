@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<head>
+    <script>
+        function ham(){
+        var a= Number(prompt("nhap a la :"));
+        var b= Number(prompt("nhsp b la : "));
+        var n = Number(prompt("nhap chon 1-4 "));
+        switch (n){
+            case 1:
+            var kq = a+b;
+            alert("tong = "+kq);
+            break;
+            case 2 : 
+            var kq= a-b;
+            alert("hieu = "+kq);
+            break;
+            case 3 : 
+            var kq= a*b;
+            alert("tich = "+kq);
+            break;
+            case 4: 
+            var kq = a/b;
+            alert("thuong= "+kq);
+            break;
+            default : alert("ban chon sai rui !")
+            break;
+        }
+    }
+    </script>
+</head>
+<body>
+    <script>
+        ham();
+    </script>
+</body>
+</html>

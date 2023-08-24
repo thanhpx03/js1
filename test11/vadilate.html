@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .container{
+            border: 1px solid blueviolet;
+            width: 300px;
+            margin: 0 auto;
+        }
+        form{
+         
+          text-align: center;
+        }
+        button{
+           
+            margin-bottom: 10px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" name="formdk" onsubmit=" return kiemtra()">
+            <h1 style="text-align: center; color: red;">Đổi mật khẩu</h1>
+            <div>
+                <label for="">Tên đăng nhập <input type="text" name="dangnhap"></label>
+                <p id="loidangnhap" style="color:red;"></p>
+            </div>
+
+            <div>
+                <label for="">Nhập mật khẩu cũ <input type="password" name="mkcu"></label>
+                <p id="loimkcu" style="color: red;"></p>
+            </div>
+
+            <div>
+                <label for="">Nhập mật khẩu mới <input type="password" name="mkmoi"></label>
+                <p id="loimkmoi"></p>
+            </div>
+
+            <div>
+                <label for="">Nhập lại mật khẩu mới <input type="password" name="nhapmkmoi"></label>
+                <p id="loinhapmkmoi"></p>
+            </div>
+
+           
+            <button type="submit">Đổi mật khẩu</button>
+
+        </form>
+    </div>
+
+
+    <script>
+        function kiemtra() {
+            var dangnhap = document.formdk.dangnhap.value;
+            var ok = true;
+            if (dangnhap == "") {
+                document.getElementById("loidangnhap").innerHTML = "Tên đăng nhập không được để trống";
+                ok = false;
+            } else {
+                document.getElementById("loidangnhap").innerHTML = "";
+            }
+
+             var mkcu = document.formdk.mkcu.value;
+             var checkmk = "123@abc123";
+             if (mkcu == "") {
+                 document.getElementById("loimkcu").innerHTML = "Mật khẩu không được để trống";
+                 ok = false;
+             } else if (!mkcu.match(checkmk)) {
+                 document.getElementById("loimkcu").innerHTML = "Mật khẩu không đúng";
+                 ok = false;
+             } else {
+                 document.getElementById("loimkcu").innerHTML = "";
+             }    
+
+            
+
+
+
+
+            var mkmoi = document.formdk.mkmoi.value;
+            var nhapmkmoi = document.formdk.nhapmkmoi.value;
+
+            if (mkmoi == "") {
+                document.getElementById("loimkmoi").innerHTML = "Hãy nhập mật khẩu";
+                ok = false;
+            } else if (mkmoi.length < 3) {
+                document.getElementById("loimkmoi").innerHTML = "Mật khẩu yếu";
+                loimkmoi.style.backgroundColor = "red";
+                ok = false;
+            } else if (mkmoi.length < 8) {
+                document.getElementById("loimkmoi").innerHTML = "Mật khẩu trung bình";
+                loimkmoi.style.backgroundColor = "yellow";
+                ok = false;
+            }
+            else if (mkmoi.length >= 8) {
+                document.getElementById("loimkmoi").innerHTML = "Mật khẩu mạnh";
+                loimkmoi.style.backgroundColor = "white";
+                ok = true;
+            }
+
+
+            if (nhapmkmoi == "") {
+                document.getElementById("loinhapmkmoi").innerHTML = "Hãy nhập mật khẩu";
+                loinhapmkmoi.style.color = "red";
+                ok = false;
+            } else if (mkmoi !== nhapmkmoi) {
+                document.getElementById("loinhapmkmoi").innerHTML = "Mật khẩu mới  không trùng khớp";
+                ok = false;
+            } else {
+                document.getElementById("loinhapmkmoi").innerHTML = "";
+            }
+
+           
+
+
+            if (ok) {
+                alert("Đăng ký thành công!");
+                return true;
+            } else
+                return false;
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

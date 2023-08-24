@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="ham(2)">2 </button>
+    <button onclick="toan('+')">+</button>
+    <button onclick="toan('-')">-</button>
+    <button  onclick="toan('*')">*</button>
+    <button onchange="toan('/')">/</button>
+    <button onclick="ham(8)">8</button>
+    <button onclick="tra()">=</button>
+    <script>
+     var a=null,b=null,o=null;
+        function ham(x){
+            if(a==null) a = x;
+            else b = x;
+            
+        }
+        function toan(x){
+            o=x;
+
+        }
+        function tra(){
+           switch(o){
+               case "+":alert(a+b);
+               break;
+               case "-":alert(a-b);
+               break;
+               case "*":alert(a*b);
+               break;
+               case "/":alert(a/b);
+               break;
+           }
+            a =null;
+            b = null;
+        }
+    </script>
+</body>
+</html>

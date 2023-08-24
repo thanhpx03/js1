@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ptb2 = new Object();
+        ptb2.a=Number(prompt("nhập a "));
+        ptb2.b= Number(prompt("nhập b "));
+        ptb2.c= Number(prompt("nhập c "));
+        ptb2.giai=function(){
+            var delta= Math.pow(ptb2.b,2)-4*ptb2.a*ptb2.c;
+            if (delta <0){
+                alert("vô nghiệm ");
+            }else if(delta==0){
+                alert("pt có nghiệm kép ");
+                var x= -ptb2.b/(2*ptb2.a);
+                alert("nghiệm kép là : "+x);
+            }else if(delta>0){
+                alert("pt có 2 nghiệm");
+               
+                x1=(-ptb2.b+Math.sqrt(delta))/(2*ptb2.a);
+                x2= (-ptb2.b-Math.sqrt(delta))/(2*ptb2.a);
+              
+                alert("nghiệm x1 là "+x1);
+                alert("nghiệm x2 là "+x2);
+
+            }
+        }
+        
+    </script>
+    <button onclick="ptb2.giai()"> giải</button>
+    
+</body>
+</html>

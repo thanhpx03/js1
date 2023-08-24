@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRỊNH XUÂN THUỶ-BÀI 1</title>
+   <script src="angular.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div class="container" ng-app>
+        <div ng-controller='myCtrl'>
+            <h2>{{timer}}</h2>
+            <button class="btn btn-primary" ng-click="count10()">Start count to 10</button>
+        </div>
+    </div>
+
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl", function($scope){
+            $scope.timer = 1;
+            $scope.count10 = function () {
+                setInterval(function () {
+                    if (10 > $scope.timer) {
+                        $scope.timer++;
+                    } else {
+                        $scope.timer = 1;
+                    }
+                    $scope.$apply();
+                }, 1000);
+
+            };
+
+        });
+
+      
+    </script>
+</body>
+
+</html>

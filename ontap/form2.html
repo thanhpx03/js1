@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" name="formdangky" onsubmit="return validate()" >
+        <div>
+           nhap họ tên <input type="text" name="txtten">
+           <p id="loiten" style="color: red;"> </p>
+        </div>
+        <div>
+            <button type="submit"> doimmk</button>
+        </div>
+    </form>
+    <script>
+        function validate(){
+            var ten=document.formdangky.txtten.value;
+            var ok=true;
+            if(ten==""){
+                document.getElementById("loiten").innerHTML="khong dk "
+                ok=false;
+            }else document.getElementById("loiten").innerHTML="";
+        
+        if(ok){
+            alert("thanh cong");
+            return true;
+        }else return false;
+        }
+    </script>
+</body>
+</html>

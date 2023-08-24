@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Kí - Đỗ Quang Linh</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/c22323f31e.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt=""></a>
+            <div class="login">
+                <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Đăng nhập</a><a> | </a>
+                <a href="dangki.html"><i class="fa-solid fa-right-from-bracket"></i> Đăng kí</a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>|
+                </li>
+                <li>
+                    <a href=""><i class="fa-brands fa-product-hunt"></i> Sản phẩm</a>|
+                </li>
+                <li>
+                    <a href="muahangnhanh.html"><i class="fa-solid fa-cart-plus"></i> Mua hàng nhanh</a> |
+                </li>
+                <li>
+                    <a href=""><i class="fa-solid fa-phone"></i> Liên hệ</a>
+                </li>
+            </ul>
+        </div>
+        <div class="register">
+            <h2 class="dangki">ĐĂNG KÍ</h2>
+            <form action="">
+                <div class="text-field">
+                    <label>Mã sinh viên: </label>
+                    <input autocomplete="off" type="text" id="masinhvien" placeholder="Nhập mã sinh viên" />
+                    <span class="error" id="masinhvien_error"></span>
+
+                </div>
+                <div class="text-field">
+                    <label>Họ và tên: </label>
+                    <input autocomplete="off" type="text" id="hovaten" placeholder="Nhập họ và tên" />
+                    <span class="error" id="hovaten_error"></span>
+
+                </div>
+                <div class="text-field">
+                    <label>Email: </label>
+                    <input autocomplete="off" type="email" id="email" placeholder="Nhập email" />
+                    <span class="error" id="email_error"></span>
+                </div>
+                <div class="text-field">
+                    <label>Giới tính: </label>
+                    <span class="span">
+                        <input type="radio" id="male" class="gender" name="sex[]" />Nam
+                        <input type="radio" id="fmale" class="gender" name="sex[]" />Nữ
+                    </span>
+                    <span class="error" id="gender_error"></span>
+                </div>
+                <div class="text-field">
+                    <label>Ngày sinh: </label>
+                    <input type="date" id="date" />
+                    <span class="error" id="date_error"></span>
+                </div>
+                <div class="text-field">
+                    <label>Quốc tịch: </label>
+                    <select name="" id="quoctich">
+                        <option value="">-- Chọn --</option>
+                        <option value="0">Viêt Nam</option>
+                        <option value="1">USA</option>
+                        <option value="2">Korean</option>
+                        <option value="3">Japan</option>
+                    </select>
+                    <span class="error" id="quoctich_error"></span>
+                </div>
+                <div class="text-field">
+                    <label>Sở thích: </label>
+                    <span class="span">
+                        <input type="checkbox" class="sothich" name="st[]"> Đọc sách
+                        <input type="checkbox" class="sothich" name="st[]"> Du lịch
+                        <input type="checkbox" class="sothich" name="st[]"> Âm nhạc
+                        <input type="checkbox" class="sothich" name="st[]">Ẩm thực
+                        <input type="checkbox" class="sothich" name="st[]">Khác
+                    </span>
+                    <span class="error" id="chonsothich"></span>
+                </div>
+                <div class="text-field">
+                    <label>Ghi chú: </label>
+                    <textarea id="note" name="" id="" cols="30" rows="4" onkeyup="demkitu()"></textarea>
+                    <span class="error" id="note_error"></span>
+
+                </div>
+                <div class="text-field">
+                    <button type="submit" onclick="return dangki()">Đăng kí</button>
+                </div>
+            </form>
+        </div>
+        <div class="footer">
+            <p>ĐỖ QUANG LINH</p>
+        </div>
+    </div>
+</body>
+
+</html>

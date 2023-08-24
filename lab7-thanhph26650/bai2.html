@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÀI 2</title>
+    <script src="angular.js"></script>
+    <script src="firebase.js"></script>
+</head>
+
+<body ng-app="chatApp">
+    <div ng-controller="chatCtrl">
+        <h4>Chatting as: {{name}}</h4>
+        <p><input type="text" placeholder="Name..." ng-model="name"></p>
+        <p><input type="text" placeholder="Message..." ng-model="msg"></p>
+        <p><button ng-click="send()">Send</button> <button ng-click="_clear()">Clear</button></p>
+        <p ng-repeat="item in chat">
+            <b>{{item.name}}</b>: {{item.msg}}
+        </p>
+    </div>
+
+    <script>
+        var app = angular.module("chatApp", []);
+        app.controller("chatCtrl", function ($scope) {
+            var db = new Firebase("https://thanhph26650-default-rtdb.firebaseio.com");
+            $scope.chat = [];
+            db.on("value", function (nodes) {
+                nodes.forEach(function (childNodes) {
+                    $scope.chat.push(childNodes.val());
+                });
+            });
+
+            $scope.send = function () {
+                $scope.chat = [];
+                db.push({
+                    name: $scope.name,
+                    msg: $scope.msg
+                });
+                $scope.msg = "";
+            }
+            $scope._clear = function () {
+                db.remove();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

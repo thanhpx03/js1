@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="img/banner1.jpg" id="hinh" alt="">
+        <p>
+            <button onclick="_pre()" >pre</button>
+            <button onclick="_next()">next</button>
+            <button onclick="_auto()">auto</button>
+            <button onclick="_stop()">stop</button>
+        </p>
+    </div>
+    <script>
+        var hinh=document.querySelector("#hinh");
+        var imgArr=[];
+        var index =0;
+        document.body.onload=function(){
+            for(var i=0;i<4;i++){
+                imgArr[i]=new Image();
+                imgArr[i].src="img/banner"+(i+1)+".jpg";
+            }
+            _auto();
+        }
+        function _next(){
+            index++;
+            if(index>3) index=0;
+            hinh.src=imgArr[index].src;
+        } 
+        function _pre(){
+            index--;
+            if(index<0) index=3;
+            hinh.src=imgArr[index].src;
+        }
+        var t;
+        function _auto(){
+            clearInterval(t);
+            t=setInterval("_next()",500);
+        }
+        function _stop(){
+            clearInterval(t);
+        }
+    </script>
+
+    
+</body>
+</html>

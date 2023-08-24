@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <form action="" name="fromDangKy" onsubmit="return validate()" boder="1">
+        <div>
+            <input type="text" name="txtHoTen" placeholder="Nhập họ tên" >
+            <p id="loiHoTen" style="color:red"></p>
+        </div>
+        <div>
+            <input type="text" name="txtSDT" placeholder="Nhập SDT" >
+            <p id="loiSDT" style="color: red"></p>
+        </div>
+        <p>
+            <button type="submit">Gửi dữ liệu</button>
+        </p>
+    </form>
+
+    <script>
+        function validate() {
+            var hoten = document.fromDangKy.txtHoTen.value;
+            var ok = true;
+            //Kiểm tra họ tên
+            if (hoten == "") {
+                document.getElementById("loiHoTen").innerHTML = "Họ tên không được rỗng";
+                ok = false;
+            } else document.getElementById("loiHoTen").innerHTML = "";
+            var sdt = document.fromDangKy.txtSDT.value;
+            var regSDT = /^0[0-9]{9}$/;
+            if (sdt == "") {
+                document.getElementById("loiSDT").innerHTML = "SDT không được rỗng";
+                ok = false;
+            } else if (!sdt.match(regSDT)) {
+                document.getElementById("loiSDT").innerHTML = "SDT không đúng định dạng";
+                ok = false;
+            }else 
+            document.getElementById("loiSDT").innerHTML="";
+            //Kiểm tra tổng thể
+            if (ok) {
+                alert("Đăng ký thành công");
+                return true;
+            } else return false;
+
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <p>tên sản phẩm <input type="text" ng-model="tensp"></p>
+        <p>đơn giá <input type="number" ng-model="dongia" ></p>
+        <p>số lượng <input type="text" ng-model="sl"></p>
+        <p>thành tiền  </p>
+        <p><button ng-click="them()"> thêm sản phẩm </button></p>
+        <div>
+            <table border="1" style="border-collapse:collapse">
+                <tr>
+                    <th>STT</th>
+                    <th>tên sản phẩm </th>
+                    <th>đơn giá</th>
+                    <th>số lượng</th>
+                    <th>thành tiền</th>
+                    
+                </tr>
+                <tr  ng-repeat="item in mangSp">
+                    <td>{{$index +1}}</td>
+                    <td>{{item.tensp}}</td>
+                    <td>{{item.dongia}}</td>
+                    <td> <input type="number" value="{{item.sl}}" ng-moder="item.sl" ></td>
+
+                    <!-- <td>{{item.sl}}</td> -->
+                    <td>{{item.tt}}</td>
+                </tr>
+
+            </table>
+
+
+        </div>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.mangSp=[];
+            $scope.them = function(){
+                var sp=[];
+                sp.tensp=$scope.tensp;
+                sp.dongia=$scope.dongia;
+                sp.sl=$scope.sl;
+                sp.tt=Number($scope.dongia*$scope.sl);
+                $scope.mangSp.push(sp);
+                
+            }
+
+        });
+    </script>
+</body>
+
+</html>

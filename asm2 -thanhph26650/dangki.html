@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style2.css">
+
+
+</head>
+<style>
+    *{
+        max-width: 980px;
+        margin: 0 auto;
+       
+    }
+    form{
+        margin: 10px;
+       
+        border:1px solid gray ;
+    }
+    .a input {
+        width: 97%;
+        margin: 10px;
+     
+    }
+    .b{
+        margin: 10px;
+    }
+    .f input{
+        margin: 10px;
+        width: 97%;
+    }
+    .d{
+        margin: 10px;
+    }
+    
+    .e{
+        text-align: center;
+        margin: 10px;
+
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="">
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="index.html">Trang chủ</a>
+                </li>
+                <li>
+                    <a href="sanpham.html">Sản phẩm</a>
+                </li>
+                <li>
+                    <a href="dangki.html">đăng kí</a>
+                </li>
+                <li>
+                    <a href="sanpham_1.html">thanh toán</a>
+                </li>
+            </ul>
+        </div>
+      
+
+    <form action="" name="fromDangKy" onsubmit="return validate()" border="1">
+        <h1 align="center">đăng kí thông tin</h1>
+
+        <div class="a">
+            <input type="text" name="txtHoTen" placeholder="Nhập họ tên" >
+            <p id="loiHoTen" style="color:red"></p>
+        </div>
+        <div class="a">
+            <input type="text" name="txtdiachi" placeholder="nhập mail" >
+            <p id="loidiachi" style="color: red;"></p>
+        </div>
+        <div class="a">
+            <input type="text" name="txtSDT" placeholder="Nhập SDT" >
+            <p id="loiSDT" style="color: red"></p>
+        </div>
+        <div class="a">
+            <select name="txtnganh">
+                <option value=""> chọn ngành học </option>
+                <option value="mat"> it </option>
+                <option value="nuoc">maketing </option>
+                <option value="tra">photoshop</option>
+            </select>
+            <p id="loinganh" style="color: red;"></p>
+
+        </div>
+        <div class="b">
+            <label for="">giới tính</label>
+            <fieldset>
+                <input type="radio" name="txtgt" value="nam"> Nam
+                <input type="radio" name="txtgt" value="nữ">Nữ
+                <p id="loigioi" style="color: red;"></p>
+            </fieldset>
+        </div>
+        <div class="f">
+            <label for="">ngày sinh</label>
+            
+            <p>
+               
+                <input type="date" name="txtngay">
+                <p id="loingay" style="color: red;"></p>
+            </p>
+        </div>
+        <div class="d">
+          <label for="" > sở thích</label>
+              <fieldset>
+                <input type="checkbox" name="st" value="bóng đá">bóng đá
+                <input type="checkbox" name="st" value="bóng rổ">bóng rổ
+                <input type="checkbox" name="st" value="cầu lông">cầu lông
+                <input type="checkbox" name="st" value="bơi lội ">bơi lội
+                <input type="checkbox" name="st" value="bóng bàn">bóng bàn
+              </fieldset>
+           
+            
+            <!-- <p>
+                <input type="radio" name="st" value="nam"> nam
+                <input type="radio" name="st" value="nữ"> nữ
+            </p> -->
+            <p>
+        </div>
+        <p class="e">
+            <button type="submit">đăng kí</button>
+        </p>
+    </form>
+
+    <script>
+        function validate() {
+            var hoten = document.fromDangKy.txtHoTen.value;
+            var ok = true;
+            var sdt = document.fromDangKy.txtSDT.value;
+            var regSDT = /^0[0-9]{9}$/;
+           
+          var mail=document.fromDangKy.txtdiachi.value;
+          var nganh=document.fromDangKy.txtnganh.value;
+          var gt=document.fromDangKy.txtgt.value;
+          var ngay=document.fromDangKy.txtngay.value;
+            //Kiểm tra họ tên
+            if (hoten == "") {
+                document.getElementById("loiHoTen").innerHTML = "Họ tên không được rỗng";
+                ok = false;
+            } else document.getElementById("loiHoTen").innerHTML = "";
+            if(mail==""){
+                document.getElementById("loidiachi").innerHTML="mail không được rỗng";
+                ok=false;
+
+            }else {
+                document.getElementById("loidiachi").innerHTML="";
+            }
+         
+            if (sdt == "") {
+                document.getElementById("loiSDT").innerHTML = "SDT không được rỗng";
+                ok = false;
+            } else if (!sdt.match(regSDT)) {
+                document.getElementById("loiSDT").innerHTML = "SDT không đúng định dạng";
+                ok = false;
+            }else 
+            document.getElementById("loiSDT").innerHTML="";
+            if(nganh==""){
+                document.getElementById("loinganh").innerHTML="ngành học không đuọc trống";
+                ok=false;
+            }else{
+                document.getElementById("loinganh").innerHTML="";
+            }
+            if(gt==""){
+                document.getElementById("loigioi").innerHTML="giới tính không được trống";
+                ok=false;
+            }else{
+                document.getElementById("loigioi").innerHTML="";
+            }
+            if(ngay==""){
+                document.getElementById("loingay").innerHTML="ngày không được trống";
+                ok=false;
+            }else {
+                document.getElementById("loingay").innerHTML="";
+            }
+            //Kiểm tra tổng thể
+            if (ok) {
+                alert("Đăng ký thành công");
+                return true;
+            } else return false;
+
+        }
+
+
+
+
+
+    </script>
+    <div class="footer">
+        <p>phạm xuân thanh ph26650</p>
+    </div>
+</body>
+</html>

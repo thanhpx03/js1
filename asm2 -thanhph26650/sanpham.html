@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style2.css">
+
+</head>
+
+<body>
+
+    <body>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="index.html">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="sanpham.html">Sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="dangki.html">đăng kí</a>
+                    </li>
+                    <li>
+                        <a href="sanpham_1.html">thanh toán</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="id">
+                <img id="a" src="" alt="">
+
+            </div>
+            <div class="ab">
+                <select id="sanpham" onchange="chonSP()">
+                    <option value=""> chọn sản phẩm </option>
+                    <option value="mat"> mật ong </option>
+                    <option value="nuoc">nước hoa hồng </option>
+                    <option value="tra">trà nghệ tây</option>
+                </select>
+
+            </div>
+            <div class="c">
+                <p>
+                    tên : <span id="name"></span>
+                </p>
+                <p>
+                    giá : <span id="price"></span>
+                </p>
+
+                <p>
+
+            </div>
+
+
+            <script>
+                function chonSP(x) {
+                    var hinh = document.getElementById("a");
+                    var sp = document.getElementById("sanpham").value;
+                    switch (sp) {
+                        case '':
+                            break;
+                        case 'mat':
+                            document.getElementById("a").src = "img/mat.jpg ";
+                            document.getElementById("name").innerHTML = "Mat ong"
+                            document.getElementById("price").innerHTML = "10000"
+                            break;
+                        case 'nuoc':
+                            document.getElementById("a").src = "img/nuoc.jpg ";
+                            document.getElementById("name").innerHTML = "nước hoa hồng"
+                            document.getElementById("price").innerHTML = "10000000"
+
+                            break;
+                        case 'tra':
+                            document.getElementById("a").src = "img/tra.jpg ";
+                            document.getElementById("name").innerHTML = "trà nghệ tây"
+                            document.getElementById("price").innerHTML = "100003"
+                            break;
+                    }
+                }
+            </script>
+            <p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+
+
+
+
+
+
+            </p>
+            <p>
+
+            </p>
+
+            <div class="footer">
+                <p>phạm xuân thanh ph26650</p>
+            </div>
+        </div>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="formdangky" onsubmit="return validate()" >
+        <div>
+            <p>
+                nhap ho ten<input type="text" name="txtten" placeholder="nhap ho ten"></p>
+                <p id="loiten" style="color: red;"></p>
+        </div>
+         <div>
+             <p > mk<input type="password" name="txtmk"></p>
+
+             <p id="loimk" style="color: red;"></p>
+         </div>
+
+         <div>
+             <button type="submit">doi mk thanh cong</button>
+         </div>
+</form>
+<script>
+    function validate(){
+        var hoten=document.formdangky.txtten.value;
+        var ok=true;
+        var mk=document.formdangky.txtmk.value;
+        if(hoten ==""){
+            document.getElementById("loiten").innerHTML="ten k dk trong";
+            ok=false;
+        }else document.getElementById("loiten").innerHTML="";
+        
+        if(mk==""){
+            document.getElementById("loimk").innerHTML="mk k dk trong";
+
+        }else document.getElementById("loimk").innerHTML="";
+        if(ok){
+        alert("doi mk thanh!");
+        return true;
+
+    }else return false;
+}
+</script>
+    
+</body>
+</html>

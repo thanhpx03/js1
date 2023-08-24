@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cal{
+        width: 400px;
+        margin: 0 auto;
+      }
+      .cal>table{
+        width: 100%;
+      }
+      h3{
+        font-family: Tahoma;
+        color: #fba401;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      input[type="button"] {
+        background-color: #fba401;
+        color: #ffffff;
+        border: solid #ccc 1px;
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+      }
+      input[type="button"]:hover{
+        font-weight: bold;
+        background-color: #fba3019d;
+        cursor: pointer;
+      }
+
+      input[type="text"] {
+        border: solid #ccc 2px;
+        width: 96.2%;
+        padding: 0 5px;
+        height: 40px;
+        text-align: right;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cal">
+      <h3>Calculator Application</h3>
+      <table>
+        <tr>
+          <td colspan="4"><input type="text" id="result" /></td>
+        </tr>
+        <tr>
+          <!-- create button and assign value to each button -->
+          <!-- dis("1") will call function dis to display value -->
+          <td><input type="button" value="1" onclick="" /></td>
+          <td><input type="button" value="2" onclick="" /></td>
+          <td><input type="button" value="3" onclick="" /></td>
+          <td><input type="button" value="/" onclick="" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="4" onclick="" /></td>
+          <td><input type="button" value="5" onclick="" /></td>
+          <td><input type="button" value="6" onclick="" /></td>
+          <td><input type="button" value="-" onclick="" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="7" onclick="" /></td>
+          <td><input type="button" value="8" onclick="" /></td>
+          <td><input type="button" value="9" onclick="" /></td>
+          <td><input type="button" value="+" onclick="" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="C" onclick="" /></td>
+          <td><input type="button" value="0" onclick="" /></td>
+          <!-- solve function call function solve to evaluate value -->
+          <td><input type="button" value="=" onclick="" /></td>
+          <td><input type="button" value="*" onclick="" /></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+
+    </script>
+  </body>
+</html>

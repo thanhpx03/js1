@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px auto;
+            max-width: 500px;
+        }
+
+        .form-group {
+            margin: 10px 0px;
+        }
+
+        .form-control {
+            width: 98%;
+            padding: 5px;
+            outline: none;
+            border: 1px solid gray;
+            border-radius: 3px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            font-variant: small-caps;
+        }
+
+        .form-control:focus {
+            background-color: yellow;
+            box-shadow: 0 0 3px red;
+            border: 1px solid yellow;
+        }
+
+        .form-button {
+            padding: 8px 30px;
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            background-color: white;
+            color: orangered;
+            box-shadow: inset 0 0 20px blue;
+        }
+
+        .form-button:hover {
+            color: blue;
+            box-shadow: inset 0 0 20px orangered;
+        }
+
+        .form-button:disabled {
+            color: darkgray;
+            box-shadow: inset 0 0 20px gray;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script>
+        function getValue(id) {
+            return document.getElementById(id).value.trim();
+        }
+
+        function showError(key, mess) {
+            document.getElementById(key + '_error').innerHTML = mess;
+        }
+
+        function dangki() {
+
+            var msv = document.getElementById("masv").value;
+            var hoten = document.getElementById("hoten").value;
+            var email = document.getElementById("email").value;
+            var gt = document.getElementById("gt").checked;
+            var date = document.getElementById("date").value;
+            var quoctich = document.getElementById("quoctich").value;
+            var sothich = document.getElementById("sothich").value;
+            var note = document.getElementById("note");
+
+            if (msv == "") {
+                showError('masv', 'Vui lòng kiểm tra lại mã sinh viên !');
+                return false;
+            } else {
+                showError('masv', '');
+            }
+            if (hoten == "") {
+                showError('hoten', 'Vui lòng kiểm tra lại họ tên !');
+                return false;
+            } else {
+                showError('hoten', '');
+            }
+            if (email == "") {
+                showError('email', 'Vui lòng kiểm tra lại email !');
+                return false;
+            } else {
+                showError('email', '');
+            }
+            if (gt == "") {
+                showError('gt', 'Vui lòng chọn giới tính !');
+                return false;
+            } else {
+                showError('gt', '');
+            }
+            if (date == "") {
+                showError('date', 'Vui lòng kiểm tra lại ngày sinh !');
+                return false;
+            } else {
+                showError('date', '');
+            }
+            if (quoctich == "") {
+                showError('quoctich', 'Vui lòng chọn quốc tịch !');
+                return false;
+            } else {
+                showError('quoctich', '');
+            }
+            if (sothich == "") {
+                showError('sothich', 'Vui lòng chọn sở thích !');
+                return false;
+            } else {
+                showError('sothich', '');
+            }
+            if (note.value.length > 200) {
+                showError('note', 'Vui lòng kiểm tra lại ghi chú !');
+                return false;
+            } else {
+                showError('note', '');
+            }
+            alert("Đăng kí thành công !!!")
+            window.location.href = "ASM JS/index.html";
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form method="post" action="">
+        <div class="form-group">
+            <label>Mã sinh viên:</label>
+            <input class="form-control" type="text" id="masv" required />
+            <span id="masv_error"></span>
+        </div>
+        <div class="form-group">
+            <label>Họ và tên:</label>
+            <input class="form-control" type="text" id="hoten" required />
+            <span id="hoten_error"></span>
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input class="form-control" type="email" id="email" required />
+            <span id="email_error"></span>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <legend>Giới tính:</legend>
+                <label>
+                    <input type="radio" id="gt" value="Nam" required>Nam
+                </label>
+                <label>
+                    <input type="radio" id="gt" value="Nu" required>Nữ
+                </label>
+                <span id="gt_error"></span>
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <label>Ngày sinh:</label>
+            <input class="form-control" type="date" id="date" required />
+            <span id="date_error"></span>
+        </div>
+        <div class="form-group">
+            <label>Quốc tịch:</label>
+            <select name="" id="quoctich" class="form-control" required>
+                <option value="">-- Chọn --</option>
+                <option value="0">Viêt Nam</option>
+                <option value="1">USA</option>
+                <option value="2">Korean</option>
+                <option value="3">Japan</option>
+                <span id="quoctich_error"></span>
+            </select>
+        </div>
+        <div class="form-group">
+            <fieldset required>
+                <legend>Sở thích:</legend>
+                <label>
+                    <input type="checkbox" id="sothich"> Đọc sách
+                </label>
+                <label>
+                    <input type="checkbox" id="sothich"> Du lịch
+                </label>
+                <label>
+                    <input type="checkbox" id="sothich"> Âm nhạc
+                </label>
+                <label>
+                    <input type="checkbox" id="sothich">Ẩm thực
+                </label>
+                <label>
+                    <input type="checkbox" id="sothich">Khác
+                </label>
+                <span id="sothich_error"></span>
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <label>Ghi chú:</label>
+            <textarea class="form-control " id="note" name="" id="" cols="30" rows="4" required></textarea>
+            <span id="note_error"></span>
+        </div>
+        <hr />
+        <div class="form-group">
+            <button class="form-button" type="submit" onclick="return dangki()">Đăng kí</button>
+        </div>
+    </form>
+</body>
+
+</html>

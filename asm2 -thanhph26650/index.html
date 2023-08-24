@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+
+    <script>
+        var arrImg = []
+        arrImg[0] = "img/banner1.jpg"
+        arrImg[1] = "img/banner2.jpg"
+        arrImg[2] = "img/banner3.jpg"
+        arrImg[3] = "img/banner4.jpg"
+        arrImg[4] = "img/banner5.jpg"
+        var i = 0
+        var img_auto
+
+        function slideauto() {
+            i++
+            document.getElementById("slideshow").src = arrImg[i]
+            if (i == arrImg.length - 1) {
+                i = -1
+            }
+            img_auto = setTimeout(slideauto, 1000);
+        }
+        window.onload = function() {
+            img_auto = setTimeout(slideauto, 1000);
+        }
+
+        function stop() {
+            clearTimeout(img_auto)
+        }
+
+        function first() {
+            document.getElementById("slideshow").src = arrImg[0]
+        }
+
+        function last() {
+            document.getElementById("slideshow").src = arrImg[arrImg.length - 1]
+        }
+
+        function next() {
+            i++
+            document.getElementById("slideshow").src = arrImg[i]
+            if (i == arrImg.length - 1) {
+                i = -1
+            }
+        }
+
+        function pre() {
+            i--
+            document.getElementById("slideshow").src = arrImg[i]
+            if (i == 0) {
+                i = arrImg.length
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="">
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="index.html">Trang chủ</a>
+                </li>
+                <li>
+                    <a href="sanpham.html">Sản phẩm</a>
+                </li>
+                <li>
+                    <a href="dangki.html">đăng kí</a>
+                </li>
+                <li>
+                    <a href="sanpham_1.html">thanh toán</a>
+                </li>
+            </ul>
+        </div>
+        <div class="banner">
+            <button class="left" onclick="pre()"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="right" onclick="next()"><i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </button>
+            <img src="img/banner1.jpg" alt="" id="slideshow">
+        </div>
+
+        <p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+
+
+
+
+
+
+
+        </p>
+        <p>
+
+        </p>
+
+        <div class="footer">
+            <p>phạm xuân thanh ph26650</p>
+        </div>
+    </div>
+</body>
+
+</html>

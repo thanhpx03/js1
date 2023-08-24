@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <h1>
+        sở thích
+    </h1>
+    <input type="checkbox" name="st" value="bóng đá">bóng đá
+    <input type="checkbox" name="st" value="bóng rổ">bóng rổ
+    <input type="checkbox" name="st" value="cầu lông">cầu lông
+    <input type="checkbox" name="st" value="bơi lội ">bơi lội
+    <input type="checkbox" name="st" value="bóng bàn">bóng bàn -->
+    <p>
+        <input type="radio" name="st" value="nam"> nam
+        <input type="radio" name="st" value="nữ"> nữ
+    </p>
+    <p>
+        
+        <button>
+            sở thích được chọn
+        </button>
+    </p>
+    <script>
+        document.getElementsByTagName("button")[0].onclick = function() {
+            var kq = "";
+            var st = document.getElementsByName("st");
+            for (var i = 0; i < st.length; i++) {
+                if (st[i].checked) {
+                    kq += st[i].value + "\n";
+          
+                }
+            }
+            alert(kq);
+        }
+
+    </script>
+
+</body>
+
+</html>

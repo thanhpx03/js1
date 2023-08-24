@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function SinhVien(id,ten,diem){
+            this.id=id;
+            this.ten=ten;
+            this.diem=diem;
+            this.ketQua=function(){
+                if(SinhVien.diem>=5) return "đỗ";
+                else return "truọt";
+                }
+            }
+            var an= new SinhVien("123","nguyễn văn a",9);
+            document.write("mã : "+an.id+"<br>");
+            document.write("họ và tên "+an.ten+"<br>");
+            document.write("diem "+an.diem+"<br>");
+            document.write("kết quả : "+an.ketQua()+"<br>");
+    </script>
+    
+</body>   
+</html>

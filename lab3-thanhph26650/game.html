@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<head>
+    <script>
+        function ham(){
+            var so_bi_mat=Math.round(Math.random()*100);
+            while(true){
+              var  so_doan=prompt("so doan la ");
+              if(so_doan==so_bi_mat){
+                  alert("ban daon dung rui!");
+                  break;
+
+              }else if (so_doan>so_bi_mat){
+                  alert("so ban doan qua to ");
+              }
+              else {
+                  alert("so doan qua nho");
+              }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <script>
+        ham();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var tab1;
+    function mo(){
+        tab1=window.open("https://ap.poly.edu.vn/");
+
+    }
+    function dong(){
+        if(tab1.closed==false){
+            tab1.close();
+            
+        }
+    }
+    function kiemtra(){
+        if(tab1.closed==false){
+            alert("trang chưa đóng web");
+        }
+        else{
+            alert("trang đã đóng ");  
+        }
+    }
+</script>
+<body>
+    <button onclick="mo()">mở cửa sổ mới </button>
+    <button onclick="dong()">đóng cửa sổ mới </button>
+    <button onclick="kiemtra()">kiểm tra cửa sổ mới đã đóng hay không</button>
+</body>
+</html>

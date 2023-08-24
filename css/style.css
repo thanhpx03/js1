@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+* {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+
+}
+
+.container {
+    background-image: url("../img/bg.png");
+    background-repeat: repeat;
+}
+
+.logo {
+    height: 150px;
+    background-color: black;
+}
+
+.logo img {
+    width: 25%;
+}
+
+.login {
+    position: relative;
+    float: right;
+    padding: 10px 10px;
+    border: 1px solid white;
+    border-radius: 0 0 0 10px;
+    margin: -1px -1px 0 0;
+}
+
+.login a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu {
+    clear: both;
+    background-color: #fed100;
+}
+
+.menu ul li {
+    display: inline-table;
+    padding: 10px 0 10px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    padding: 15px;
+    color: black;
+
+}
+
+.banner {
+    margin-top: 3px;
+    height: 300px;
+    clear: both;
+    background-color: black;
+}
+
+.banner .left {
+    position: absolute;
+    top: 45%;
+    left: 280px;
+    text-decoration: none;
+    opacity: .7;
+}
+
+.banner .right {
+    position: absolute;
+    top: 45%;
+    right: 280px;
+    text-decoration: none;
+    opacity: .7;
+}
+
+.banner button {
+    font-size: 50px;
+    font-weight: bolder;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.banner button:hover {
+    opacity: 1;
+}
+
+.banner img {
+    height: 300px;
+    width: 980px;
+}
+
+.main {
+    clear: both;
+    height: 700px;
+    margin-top: 3px;
+    background-color: white;
+}
+
+.main .left {
+    float: left;
+    width: 200px;
+}
+
+.main .right {
+    float: right;
+    width: 770px;
+}
+
+.footer {
+    clear: both;
+    height: 50px;
+    background-color: #fed100;
+}
+
+.footer p {
+    color: white;
+    padding: 17px;
+    text-align: center;
+}
+
+.san-pham {
+    float: left;
+    width: 22%;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-bottom: 17px;
+    margin-top: 7px;
+
+}
+
+.column img {
+    width: 80%;
+    height: 300px;
+}
+
+.column h3 {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.column span.giagoc {
+    text-decoration-line: line-through;
+    color: gray;
+    font-size: 13px;
+}
+
+.column span.gia {
+    color: red;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 10px;
+    background-color: white;
+}
+
+.button {
+    background-color: transparent;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.btn .button {
+    --color: #eef138;
+    /* font-family: "Poppins", sans-serif; */
+    color: black;
+    padding: 5px 15px;
+    width: 100px;
+    border-radius: 4px;
+    background-color: var(--color);
+    cursor: pointer;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: all 0.2s linear;
+}
+
+.btn .button:hover {
+    transform: rotateY(-15deg);
+}
+
+/* dangki */
+
+.register {
+    width: 500px;
+    border: 1px solid gray;
+    padding: 10px 35px;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.register .text-field {
+    position: relative;
+    margin-top: 15px;
+}
+
+.register .text-field label {
+    display: inline-block;
+    font-weight: 600;
+    padding: 1px 5px;
+    font-size: 13px;
+    transform: translateY(-50%);
+    color: black;
+}
+
+.register .text-field input[type=text],
+input[type=date],
+input[type=email],
+textarea,
+span.span {
+    padding: 15px;
+    display: inline-table;
+    width: 94%;
+    font-size: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+select {
+    padding: 15px;
+    display: inline-table;
+    width: 100%;
+    font-size: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.register .text-field input[type=radio],
+input[type=checkbox] {
+    margin-left: 10px;
+}
+
+
+.register .radio-input:checked+.radio-label {
+    box-shadow: 0 0 0 4px #fff, 0 0 0 6px #fd656b;
+    background-color: #fd656b;
+}
+
+.register .switch {
+    position: relative;
+    cursor: pointer;
+    width: 12rem;
+    height: 5rem;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    background: #000;
+    border-radius: 100rem;
+    transition: background-color 0.25s linear;
+}
+
+.register .switch-input {
+    display: none;
+}
+
+.register .error {
+    color: red;
+    font-size: 12px;
+}
+
+.text-field button {
+    --color: #eef138;
+    color: black;
+    padding: 10px 15px;
+    width: 99%;
+    /* background-color: var(--color); */
+    cursor: pointer;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: all 0.2s linear;
+    background-image: linear-gradient(-106deg, #51beed 2%, #288ad6 100%);
+    box-shadow: 0 2px 6px 0 #9ed4ec;
+    border-radius: 100px;
+    color: white;
+}
+
+.text-field button:hover {
+    transform: rotateY(-15deg);
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+/*mua hang nhanh*/
+.buy .main {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.buy h2 {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.buy #muc-gia {
+    text-align: center;
+}
+
+.buy input[type=checkbox] {
+    margin: 10px;
+}
+
+.buy .main td {
+    padding: 5px;
+}
+
+.buy input[type=number] {
+    padding: 10px;
+}
+
+.display {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.display .button {
+    --color: #eef138;
+    font-family: "Poppins", sans-serif;
+    color: black;
+    width: 200px;
+    border-radius: 4px;
+    background-color: var(--color);
+    cursor: pointer;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: all 0.2s linear;
+}
+
+.display .button:hover {
+    transform: rotateY(-15deg);
+}
+
+td.fix {
+    text-align: center;
+}
+
+th.fix {
+    text-align: center;
+}
+
+tr.top {
+    background-color: black;
+    color: white;
+}
+.register h2.dangki{
+    text-align: center;
+    margin: 10px;
+}

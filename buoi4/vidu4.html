@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function SinhVien(id, ten, diem) {
+            this.id = id;
+            this.ten = ten;
+            this.diem = diem;
+            this.ketQua = function () {
+                if (this.diem >= 5) return "đỗ";
+                else return "truọt";
+            }
+
+        }
+        var n = Number(prompt("số  lượng "));
+        var a = [];
+        for (var i = 0; i < n; i++) {   
+            var id = prompt("nhập mã sinh viên ");
+            var ten = prompt("nhập tên sinh vien ");
+            var diem = prompt("nhập điểm sinh viên ");
+             a[i] = new SinhVien(id, ten, diem);
+        }
+        
+        for (var i=0 ;i <n ;i++){
+      let ten=  document.write("tên học sinh là " + a[i].id+"<br>");
+       let diem1= document.write("diem học sinh là : " + a[i].ten+"<br>");
+     let diem2=   document.write("diem của sinh viên : " + a[i].diem + "<br>");
+     let kq=   document.write("kết quả : "+a[i].ketQua()+"<br>");
+        }
+    </script>
+    <table border="1">
+        <th>tên
+        </th>
+        <th>
+            điểm
+        </th>
+        <th>điểm sinh viên</th>
+        <th>kết quả
+        </th>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+
+</html>

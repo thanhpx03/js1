@@ -1,0 +1,52 @@
+* {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.menu {
+    background-color: #fed100;
+}
+
+.menu ul li {
+    display: inline-table;
+    padding: 10px 0 10px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    padding: 15px;
+    color: black;
+}
+
+.ab {
+    text-align: center;
+}
+
+.id {
+    text-align: center;
+}
+
+.id img {
+    width: 70%;
+}
+
+.c {
+    text-align: center;
+}
+
+.footer {
+    clear: both;
+    height: 50px;
+    background-color: #fed100;
+}
+
+.footer p {
+    color: white;
+    padding: 17px;
+    text-align: center;
+}

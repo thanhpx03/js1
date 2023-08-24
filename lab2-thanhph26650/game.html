@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<head>
+    <script>
+        function ham(){
+            var x= 10+Math.round(5*Math.random());
+           
+
+            var a=prompt("nhập giá trị là : ");
+            if(a==x){
+                alert("chúng mừng bạn đã đoán đúng ");
+            }
+         else   if(a>x){
+                alert("giá trị bạn quá lớn ");
+            }else if(a<x){
+                alert("giá trị bạn quá nhỏ ");
+            }
+            alert("giá trị ngẫu nhiên " + x);
+
+        }
+    </script>
+</head>
+<body>
+    <script>
+        ham();
+    </script>
+    
+</body>
+</html>

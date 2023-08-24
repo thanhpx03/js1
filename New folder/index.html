@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+    <script>
+        var arrImg = []
+        arrImg[0] = "img/banner1.jpg"
+        arrImg[1] = "img/banner2.jpg"
+        arrImg[2] = "img/banner3.jpg"
+        arrImg[3] = "img/banner4.jpg"
+        arrImg[4] = "img/banner5.jpg"
+        var i = 0
+        var img_auto
+
+        function slideauto() {
+            i++
+            document.getElementById("slideshow").src = arrImg[i]
+            if (i == arrImg.length - 1) {
+                i = -1
+            }
+            img_auto = setTimeout(slideauto, 1000);
+        }
+        window.onload = function () {
+            img_auto = setTimeout(slideauto, 1000);
+        }
+        function stop(){
+            clearTimeout(img_auto)
+        }
+        function first(){
+            document.getElementById("slideshow").src = arrImg[0]
+        }
+        function last(){
+            document.getElementById("slideshow").src = arrImg[arrImg.length-1]
+        }
+        function next(){
+            i++
+            document.getElementById("slideshow").src = arrImg[i]
+            if (i == arrImg.length - 1) {
+                i = -1
+            }
+        }
+        function pre(){
+            i--
+            document.getElementById("slideshow").src = arrImg[i]
+            if (i == 0) {
+                i = arrImg.length
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+            <div class="login">
+                <a href="">Đăng nhập</a> |
+                <a href="dangki.html">Đăng kí</a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="">Trang chủ</a>|
+                </li>
+                <li>
+                    <a href="">Sản phẩm</a>|
+                </li>
+                <li>
+                    <a href="muahangnhanh.html">Mua hàng nhanh</a> |
+                </li>
+                <li>
+                    <a href="">Liên hệ</a>
+                </li>
+            </ul>
+        </div>
+        <div class="banner">
+            <img src="img/banner1.jpg" alt="" id="slideshow">
+        </div>
+        <div class="btn">
+            <input class="button" type="button" value="First" onclick="first()">
+            <input class="button" type="button" value="Pre" onclick="pre()">
+            <input class="button" type="button" value="Next" onclick="next()">
+            <input class="button" type="button" value="Stop" onclick="stop()">
+            <input class="button" type="button" value="Auto" onclick="slideauto()">
+            <input class="button" type="button" value="Last" onclick="last()">
+        </div>
+        <div class="main">
+            <div class="left">
+                <img src="img/barol.jpg" alt="">
+            </div>
+            <div class="right">
+                    <div class="san-pham">
+                        <div class="column">
+                            <h3>IPHONE 13 PRM</h3>
+                            <img src="img/ip.jpg" alt="">
+                            <span class="giagoc">$1000</span> <span class="gia">$999</span>
+                        </div>
+                    </div>
+                    <div class="san-pham">
+                        <div class="column">
+                            <h3>IPHONE 13 PRM</h3>
+                            <img src="img/ip.jpg" alt="">
+                            <span class="giagoc">$1000</span> <span class="gia">$999</span>
+                        </div>
+                    </div>
+                    <div class="san-pham">
+                        <div class="column">
+                            <h3>IPHONE 13 PRM</h3>
+                            <img src="img/ip.jpg" alt="">
+                            <span class="giagoc">$1000</span> <span class="gia">$999</span>
+                        </div>
+                    </div>
+                    <div class="san-pham">
+                        <div class="column">
+                            <h3>IPHONE 13 PRM</h3>
+                            <img src="img/ip.jpg" alt="">
+                            <span class="giagoc">$1000</span> <span class="gia">$999</span>
+                        </div>
+                    </div>
+                    <div class="san-pham">
+                        <div class="column">
+                            <h3>IPHONE 13 PRM</h3>
+                            <img src="img/ip.jpg" alt="">
+                            <span class="giagoc">$1000</span> <span class="gia">$999</span>
+                        </div>
+                    </div>
+                    <div class="san-pham">
+                        <div class="column">
+                            <h3>IPHONE 13 PRM</h3>
+                            <img src="img/ip.jpg" alt="">
+                            <span class="giagoc">$1000</span> <span class="gia">$999</span>
+                        </div>
+                    </div>
+                    <div class="san-pham">
+                        <div class="column">
+                            <h3>IPHONE 13 PRM</h3>
+                            <img src="img/ip.jpg" alt="">
+                            <span class="giagoc">$1000</span> <span class="gia">$999</span>
+                        </div>
+                    </div>
+                    <div class="san-pham">
+                        <div class="column">
+                            <h3>IPHONE 13 PRM</h3>
+                            <img src="img/ip.jpg" alt="">
+                            <span class="giagoc">$1000</span> <span class="gia">$999</span>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>ĐỖ QUANG LINH</p>
+        </div>
+    </div>
+</body>
+
+</html>

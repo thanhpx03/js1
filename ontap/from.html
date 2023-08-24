@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" name="formdangky" onsubmit="return validate()">
+
+        <div class="a">
+            <p>
+                nhập tên <input type="text" name="txtten" placeholder="nhập tên">
+            <p id="loiten" style="color: red;"></p>
+            </p>
+        </div>
+        <div>
+            <p>nhập mk <input type="password" name="txtmk"></p>
+
+            <p id="loimk" style="color: red;"> </p>
+        </div>
+        <div>
+            <p> mk mới <input type="password" name="txtmkm1" id="mkm1"></p>
+            <p id="loimkm1" style="color: red;"></p>
+          
+        </div>
+        <p id="loimkm12" style="color: red;"></p>
+        <p id="loimkm123" style="color: red;"></p>
+        <div>
+            <p> mk mới <input type="password" name="txtmkm2" id="mkm2"></p>
+            <p id="loimkm2" style="color: red;"></p>
+        </div>
+        <div>
+            <button type="submit">đổi mk</button>
+        </div>
+    </form>
+    <script>
+        function validate() {
+            var ten = document.formdangky.txtten.value;
+            var mk = document.formdangky.txtmk.value;
+            var ok = true;
+            var mkm1 = document.formdangky.txtmkm1.value;
+            var mkm2 = document.formdangky.txtmkm2.value;
+            var t = "123@abc123";
+            if (ten == "") {
+                document.getElementById("loiten").innerHTML = "họ tên không được rỗng";
+                ok = false;
+            } else document.getElementById("loiten").innerHTML = "";
+
+
+            if (mk == "") {
+                document.getElementById("loimk").innerHTML = "bắt buộc phải nhập";
+                ok = false;
+            } else
+                if (!mk.match(t)) {
+                    document.getElementById("loimk").innerHTML = "nhập không đúng";
+                    ok = false;
+                } else document.getElementById("loimk").innerHTML = "";
+              if(document.getElementById("mkm1").value ==document.getElementById("mkm2").value){
+              document.getElementById("loimkm12").innerHTML=" mk k đúng định dạng";
+                ok=true;
+              }else if (document.getElementById("mkm1").value ==document.getElementById("mkm2").value){
+                document.getElementById("loimkm123").innerHTML=" mk k đúng định dạng";
+                ok=true;
+
+              }else
+            if (mkm1 == "") {
+                document.getElementById("loimkm1").innerHTML = "không được bỏ trống";
+                ok = false;
+            } else document.getElementById("loimkm1").innerHTML = "";
+            if (mkm2 == "") {
+                document.getElementById("loimkm2").innerHTML = "không được bỏ trống";
+                ok = false;
+            } else document.getElementById("loimkm2").innerHTML = "";
+
+            if (ok) {
+                alert("đổi mk thành công");
+                return true;
+
+            } else return false;
+        }
+
+    </script>
+
+</body>
+
+</html>
+^[A-Za-z0-9_.]{6,32}@([a-zA-Z0-9]{2,12})(.[a-zA-Z]{2,12})+$

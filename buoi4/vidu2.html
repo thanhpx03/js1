@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var hocsinh = {
+            ma_sinh_vien: 9,
+            ho_va_ten: "nguyễn văn a",
+            diem: 7,
+            ketQua: function () {
+                if(hocsinh.diem>=5) return "đỗ";
+                else return "truọt";
+                }
+        }
+        document.write("mã : "+hocsinh.ma_sinh_vien+"<br>");
+        document.write("họ và tên "+hocsinh.ho_va_ten+"<br>");
+        document.write("diem "+hocsinh.diem+"<br>");
+        document.write("kết quả : "+hocsinh.ketQua()+"<br>")
+    </script>
+
+</body>
+
+</html>

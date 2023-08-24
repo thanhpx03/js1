@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // tạo đối tượng mèo tôm: id ,tên , màu lông , bắt chuột()
+        var meotom={
+            id: 8,
+            tên: "mèo tôm",
+            maulong: "xanh trắng",
+            batChuot:function(){
+                return "bắt chuột jerry";
+            }
+        }
+        var meoMun= new Object();
+        meoMun.id=7,
+        meoMun.tên="mèo mun",
+        meoMun.maulong="xám",
+        meoMun.batChuot()=function(){
+            return "mèo bắt chuột";
+        }
+        //truy cập các thành viên của đối tượng
+        document.write("thông tin mèo  <br>");
+        document.write("id : "+ meotom.id +"<br>");
+        document.write("tên : "+meotom.tên+"<br>");
+        meotom.maulong="xám";
+        document.write("màu lông : "+ meotom.maulong + "<br>");
+        document.write("bắt chuột : "+ meotom.batChuot()+ "<br>");
+    </script>
+    
+</body>
+</html>

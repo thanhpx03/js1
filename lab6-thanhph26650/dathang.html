@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="kiem_tra()">
+        <p>
+            <label >sản phẩm</label>
+            <input type="text" id="ten">
+        </p>
+        <p>
+            <label for="">loại </label>
+            <input type="text">
+        </p>
+        <p>
+            <label for="">đơn giá</label>
+            <input type="text">
+        </p>
+              
+        <p>
+            <label for="">nơi nhận hàng</label>
+            <input type="radio" name="dia_chi" >
+            <label for="">nội thành</label> 
+            <input type="radio"name="dia_chi">
+            <label for="">ngoại thành</label>
+        </p>    
+        <hr>
+        <button>đặt mua</button> 
+         
+    </form>
+    <script>
+        document.getElementById("ten")[0].onclick=function(){
+        
+       
+        function kiem_tra(){
+            var sp =document.getElementById("ten");
+            if(sp.value.lenght==0){
+                alert("vui long nhap ten san pham");
+               
+            }
+           
+        }
+    }
+        
+        
+    </script>
+
+ 
+ 
+</body>
+</html>

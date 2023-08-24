@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.js"></script>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<style>
+    .q{
+        text-align: center;
+        margin: 10px;
+    }
+    .t table {
+        margin: 10px;
+        width: 90%;
+    }
+    .t input{
+        width: 99%;
+    }
+    .i{
+        margin: 30px 20px;
+        
+    }
+
+</style>
+    <body ng-app="myApp">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="index.html">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="sanpham.html">Sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="dangki.html">đăng kí</a>
+                    </li>
+                    <li>
+                        <a href="sanpham_1.html">thanh toán</a>
+                    </li>
+            </div>
+            <div class="q">
+                <hr>
+                <h1>
+                    danh mục sản phẩm
+                </h1>
+                <hr>
+            </div>
+    <div ng-controller="myCtrl" class="i">
+        tên sản phẩm <input type="text" ng-model="tensp">
+        đơn giá <input type="text" ng-model="dongia" >
+        số lượng <input type="number" ng-model="sl">
+        
+        <button ng-click="them()"> thêm sản phẩm </button>
+        <div class="t">
+            <table border="1" style="border-collapse:collapse" ng-mode="tinh()">
+                <tr>
+                    <th>STT</th>
+                    <th>tên sản phẩm </th>
+                    <th>đơn giá</th>
+                    <th>số lượng</th>
+                    <th>thành tiền</th>
+                    
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>bút trì</td>
+                    <td><input type="text" value="5000" ng-mode="dg1" class="dg1"> </td>
+                    <td><input type="number" value="3" ng-mode="item.sl" /></td>
+                    <td class="thanhtien" value="tien" ></td>
+                <tr>
+                    <td>2</td>
+                    <td>thước kẻ</td>
+                    <td><input type="text" value="4000" ng-mode="dg1" class="dg1">  </td>
+                    <td><input type="number" value="4" ng-mode="item.sl" > </td>
+                    <td class="thanhtien" ><input type="text"></td>
+                </tr>
+                <tr >
+                    <td>3</td>
+                    <td>băng dính</td>
+                    <td><input type="text" value="3000" ng-mode="dg1" class="dg1"> </td>
+                    <td><input type="number" value="6" ng-mode="item.sl"></td>
+                    <td class="thanhtien"></td>
+                </tr>
+                <tr  ng-repeat="item in mangSp">
+                    <td>{{$index +1}}</td>
+                    <td>{{item.tensp}}</td>
+                    <td>{{item.dongia}}</td>
+                    <td> <input type="number" value="{{item.sl}}" ng-moder="item.sl" ></td>
+                    <!-- <td>{{item.sl}}</td> -->
+                    <td>{{item.dongia*item.sl}}</td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){
+            $scope.mangSp=[];
+            $scope.them = function(){
+                var sp=[];
+                sp.tensp=$scope.tensp;
+                sp.dongia=$scope.dongia;
+                sp.sl=$scope.sl;
+              
+                $scope.mangSp.push(sp);
+                
+            }
+
+        });
+      
+    </script>
+    
+    <div class="footer">
+        <p>phạm xuân thanh ph26650</p>
+    </div>
+</body>
+
+</html>

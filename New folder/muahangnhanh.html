@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fix{
+            border: none;
+            background-color: transparent;
+            font-weight: bold;
+            color: black;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table">
+        <table border="1">
+            <tr>
+                <td><input type="checkbox"></td>
+                <th>Hàng hóa</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="action" value="1"></td>
+                <th>Iphone</th>
+                <th><input type="text" value="500" id="gia" class="fix" disabled></th>
+                <th><input type="text" value="0" id="soluong" onkeyup="tinhtong()" disabled></th>
+                <th><input type="text" id="thanhtien" value="" disabled></th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="action1" value="1"></td>
+                <th>SamSung</th>
+                <th><input type="text" value="700" id="gia1" class="fix" disabled></th>
+                <th><input type="text" value="0" id="soluong1" onkeyup="tinhtong1()" disabled></th>
+                <th><input type="text" id="thanhtien1" value="" disabled></th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="action2" value="1"></td>
+                <th>Xiaomi</th>
+                <th><input type="text" value="400" id="gia2" class="fix" disabled></th>
+                <th><input type="text" value="0" id="soluong2" onkeyup="tinhtong2()" disabled></th>
+                <th><input type="text" id="thanhtien2" value="" disabled></th>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="action3" value="1"></td>
+                <th>BPhone</th>
+                <th><input type="text" value="900" id="gia3" class="fix" disabled></th>
+                <th><input type="text" value="0" id="soluong3" onkeyup="tinhtong3()" disabled></th>
+                <th><input type="text" id="thanhtien3" value="" disabled></th>
+            </tr>
+            <tr>
+                <th colspan="4" style="text-align: center;">TỔNG</th>
+                <th><input type="text" id="tongtien" disabled></th>
+            </tr>
+        </table>
+        <script>
+            document.getElementById("action").onclick = function (e) {
+                if (this.checked) {
+                    document.getElementById("soluong").disabled = false
+                } else {                    
+                    tong = tong - document.getElementById("thanhtien").value
+                    document.getElementById("soluong").value = "0"
+                    document.getElementById("thanhtien").value = ""
+                    document.getElementById("soluong").disabled = true
+                    tongtien()
+                }
+            };
+            document.getElementById("action1").onclick = function (e) {
+                if (this.checked) {
+                    document.getElementById("soluong1").disabled = false
+                } else {
+                    tong = tong - document.getElementById("thanhtien1").value
+                    document.getElementById("soluong1").value = "0"
+                    document.getElementById("thanhtien1").value = ""
+                    document.getElementById("soluong1").disabled = true
+                    tongtien()
+                }
+            };
+            document.getElementById("action2").onclick = function (e) {
+                if (this.checked) {
+                    document.getElementById("soluong2").disabled = false
+                } else {                    
+                    tong = tong - document.getElementById("thanhtien2").value
+                    document.getElementById("soluong2").value = "0"
+                    document.getElementById("thanhtien2").value = ""
+                    document.getElementById("soluong2").disabled = true
+                    tongtien()
+                }
+            };
+            document.getElementById("action3").onclick = function (e) {
+                if (this.checked) {
+                    document.getElementById("soluong3").disabled = false
+                } else {                    
+                    tong = tong - document.getElementById("thanhtien3").value
+                    document.getElementById("soluong3").value = "0"
+                    document.getElementById("thanhtien3").value = ""
+                    document.getElementById("soluong3").disabled = true
+                    tongtien()
+                }
+            };
+            function tinhtong1() {
+                var gia = document.getElementById("gia1").value
+                var soluong = document.getElementById("soluong1").value
+                document.getElementById("thanhtien1").value = gia * soluong
+                tongtien()
+            }
+
+            function tinhtong() {
+                var gia = document.getElementById("gia").value
+                var soluong = document.getElementById("soluong").value
+                document.getElementById("thanhtien").value = gia * soluong
+                tongtien()
+            }
+            function tinhtong2() {
+                var gia = document.getElementById("gia2").value
+                var soluong = document.getElementById("soluong2").value
+                document.getElementById("thanhtien2").value = gia * soluong
+                tongtien()
+            }
+            function tinhtong3() {
+                var gia = document.getElementById("gia3").value
+                var soluong = document.getElementById("soluong3").value
+                document.getElementById("thanhtien3").value = gia * soluong
+                tongtien()
+            }
+            var tong = 0
+            function tongtien() {
+                var thanhtien = Number(document.getElementById("thanhtien").value)
+                var thanhtien1 = Number(document.getElementById("thanhtien1").value)
+                var thanhtien2 = Number(document.getElementById("thanhtien2").value)
+                var thanhtien3 = Number(document.getElementById("thanhtien3").value)
+
+                tong = thanhtien + thanhtien1 +  thanhtien2 + thanhtien3         
+                document.getElementById("tongtien").value = tong
+                if(tong == 0){
+                    document.getElementById("tongtien").value = ""
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
